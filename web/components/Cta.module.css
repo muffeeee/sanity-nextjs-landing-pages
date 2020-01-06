@@ -1,19 +1,18 @@
 .button {
   color: inherit;
   display: block;
-  border-radius: 0;
-  border: 1px solid currentColor;
-  background-color: transparent;
-  padding: 1em 1.5em;
+  border-radius: 20px;
+  background-color: blue;
+  padding: 0.6em 1.5em;
   text-decoration: inherit;
   font-weight: 600;
   max-width: fit-content;
-  transition: transform 50ms ease-in-out;
+  transition: transform 200ms ease-in-out;
   transform: scale(1);
 }
 
 .button:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .button:active {

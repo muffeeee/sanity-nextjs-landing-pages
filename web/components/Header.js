@@ -5,6 +5,13 @@ import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
 import styles from './Header.module.css'
 import HamburgerIcon from './icons/Hamburger'
+import Cta from './Cta'
+
+const headerCta = {
+	_key: "779b35a2f34c2",
+        _type: 'cta',
+       title: "Billett"
+}
 
 class Header extends Component {
   state = {showNav: false}
@@ -109,11 +116,16 @@ class Header extends Component {
                   </li>
                 )
               })}
+	<a className={styles.purchase} href="/billetter">
+	Billetter
+	</a>
           </ul>
+
           <button className={styles.showNavButton} onClick={this.handleMenuToggle}>
             <HamburgerIcon className={styles.hamburgerIcon} />
           </button>
         </nav>
+	<div className={styles.glass}></div>
       </div>
     )
   }

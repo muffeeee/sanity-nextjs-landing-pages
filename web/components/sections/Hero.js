@@ -10,9 +10,10 @@ function urlFor (source) {
   return imageUrlBuilder(client).image(source)
 }
 
+
 function Hero (props) {
   const {heading, backgroundImage, tagline, ctas} = props
-
+  console.log(ctas)
   const style = backgroundImage
     ? {
       backgroundImage: `url("${urlFor(backgroundImage)
@@ -21,7 +22,6 @@ function Hero (props) {
         .url()}")`
     }
     : {}
-
   return (
     <div className={styles.root} style={style}>
       <div className={styles.content}>

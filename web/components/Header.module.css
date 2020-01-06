@@ -1,12 +1,34 @@
 @import "../styles/custom-media.css";
 @import "../styles/custom-properties.css";
 
+a.purchase {
+  height: 100%;
+  padding: 1em 2em;
+  margin-left: 0.9em;
+  font-size: 1.1em;
+  margin-right: -0.9em;
+  background-color: grey;
+  color: white !important;
+  transition: background-color 250ms ease,
+		color 250ms ease;
+}
+
+a.purchase:hover {
+	background-color: lightblue;
+        color: black !important;
+        cursor: pointer;
+}
+
 .root {
-  position: relative;
+  position: absolute;
   color: var(--color-black, #000);
   display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
-  max-width: var(--width-small);
+  width: 80vw;
+  z-index: 999;
+  left: 10vw;
+  top: 3rem;
 }
 
 .root a {
@@ -14,7 +36,26 @@
   text-decoration: inherit;
 }
 
+.glass {
+  width: 80vw;
+  height: 10px;
+  backdrop-filter: blur(4px);
+ }
+
+.cta {
+  margin: 0.5em;
+  display: inline;
+  display: none;
+}
+
+.cta > *:not(:first-child) {
+  margin-left: 1rem;
+}
+
+
+
 .branding {
+  background-color: white;
   font-size: inherit;
   font-weight: inherit;
   text-transform: uppercase;
@@ -23,7 +64,7 @@
 
   @nest & > a {
     display: block;
-    padding: 1.5em;
+    padding: 1.1em;
 
     @supports (padding-top: env(safe-area-inset-top)) {
       padding-left: calc(env(safe-area-inset-left) + 1.5rem);
@@ -31,7 +72,7 @@
   }
 
   @nest & img, & svg {
-    height: calc(var(--font-base-line-height) * 1.5rem);
+    height: 1.5rem;
     width: auto;
     color: inherit;
     vertical-align: top;
@@ -51,6 +92,7 @@
 }
 
 .nav {
+  background-color: white;
   @media (--media-min-medium) {
     flex: 1;
   }
@@ -91,11 +133,13 @@
   white-space: nowrap;
   align-items: stretch;
   line-height: calc(var(--font-base-line-height) * 1.5rem);
+  font-size: 1.1em;
+
 
   @nest & > a {
     display: block;
     position: relative;
-    padding: 1.5rem 0.5rem;
+    padding: 0.75rem 0.6rem;
 
     @media (--media-max-medium) {
       padding: 1rem 1.5rem;
@@ -124,6 +168,28 @@
   }
 }
 
+/*
+.navItem a:after {
+   content: "";
+   background:
+	linear-gradient(
+		to right,
+		green 1%,
+		lightblue 100%
+	)
+	left
+	bottom
+	#777
+	no-repeat;
+   background-size: 100% 5px;
+   opacity: 0;
+   height: 5px;
+   display: block;
+   margin: 0 auto;
+   width: 100%;
+   margin-top: -10px;
+}*/
+
 .showNavButton {
   appearance: none;
   border: none;
@@ -147,3 +213,5 @@
     display: none;
   }
 }
+
+

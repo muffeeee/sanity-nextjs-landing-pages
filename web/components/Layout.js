@@ -21,6 +21,7 @@ function Layout (props) {
     <>
       <Head>
         <meta name='viewport' content='initial-scale=1.0, width=device-width, viewport-fit=cover' />
+	<link href="https://fonts.googleapis.com/css?family=Ropa+Sans:400,400i&display=swap&subset=latin-ext" rel="stylesheet" />
       </Head>
       <div className='container'>
         <Header title={title} navItems={mainNavigation} logo={logo} />
